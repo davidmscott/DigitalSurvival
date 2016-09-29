@@ -143,7 +143,7 @@ export class MenuComponent implements OnInit, OnDestroy {
 
 		}.bind(this));
 
-		this.socketService.socket.emit('updateoptions', false); // not sure why this is here
+		this.socketService.socket.emit('updateoptions', false);
 
 	}
 

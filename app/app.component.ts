@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { BoardComponent, ScoreComponent, TimerComponent, StartRoundComponent, MenuComponent, CountdownComponent, WinnerComponent} from './index';
+import { BoardComponent, ScoreComponent, TimerComponent, StartRoundComponent, MenuComponent, CountdownComponent, WinnerComponent, InstructionsComponent } from './index';
 import { SocketService } from './socket.service';
 declare var io: any; // this allows global variable to exist inside this file
 
@@ -10,7 +10,7 @@ declare var io: any; // this allows global variable to exist inside this file
 		#container {
 			position: relative;
 		}
-		canvas, menu, start-round, countdown, winner, timer, #menubutton, #play, #pause, #onScreenPause {
+		canvas, menu, start-round, countdown, winner, timer, instructions, #menubutton, #play, #pause, #onScreenPause {
 			position: absolute;
 		}
 		start-round, countdown, #onScreenPause {
@@ -20,6 +20,12 @@ declare var io: any; // this allows global variable to exist inside this file
 		}
 		menu {
 			top: 40%;
+			left: 50%;
+			transform: translate(-50%,0%);
+			color: white;
+		}
+		instructions {
+			top: 10%;
 			left: 50%;
 			transform: translate(-50%,0%);
 			color: white;
@@ -96,6 +102,9 @@ declare var io: any; // this allows global variable to exist inside this file
 				*ngIf="!play"
 				(click)="pushPlay()"
 			></div>
+			<instructions
+				*ngIf="showInstructions"
+			></instructions>
 			<score></score>
 		</div>
 	`
@@ -110,6 +119,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	showMenu = false;
 	showStart = true;
 	menuAvailable = true;
+	showInstructions = true;
 	play = false;
 	duringRound = false;
 	connection;
@@ -118,8 +128,14 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	onKeyUp = function(evt) {
 
+		console.log(evt.keyCode);
+
 		if (evt.keyCode === 13) {
 			this.pushPlay();
+		}
+
+		if (evt.keyCode === 105) {
+			this.showInstructions = !this.showInstructions;
 		}
 
 	}.bind(this);

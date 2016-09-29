@@ -6,3 +6,4 @@ export { TimerComponent } from './timer.component';
 export { StartRoundComponent } from './start-round.component';
 export { CountdownComponent } from './countdown.component';
 export { WinnerComponent } from './winner.component';
+export { InstructionsComponent } from './instructions.component';
