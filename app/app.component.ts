@@ -104,6 +104,7 @@ declare var io: any; // this allows global variable to exist inside this file
 			></div>
 			<instructions
 				*ngIf="showInstructions"
+				(click)="showInstructions = false;"
 			></instructions>
 			<score></score>
 		</div>

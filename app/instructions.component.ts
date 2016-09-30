@@ -39,7 +39,7 @@ import { SocketService } from './socket.service';
 		<tr>
 			<td>
 				<div>
-					Digital Survival is a multiplayer game that allows players on different computers to play against each other in a digital ecosystem.
+					Digital Survival is a multiplayer game that allows players on different computers to play against each other in a digital ecosystem, based on Conway's Game of Life.  A cell is 'born' if it has exactly 3 neighbors, 'survives' if it has 2 or 3 neighbors, or 'dies' otherwise.
 					<br />
 					<br />
 					Player 1 can set the game settings in between rounds by clicking on the menu button in the lower left part of the screen.
@@ -48,7 +48,7 @@ import { SocketService } from './socket.service';
 					Once the round starts, each player can click on the screen to create patterns of cells that they hope will thrive.  When a player is ready to unleash their cells into the wild, they can click the play / pause button in the lower right of the screen or press the [ENTER] key.  Each player can play / pause the evolution of their own cells as many times as they want in order to build patterns; again using either the play / pause button or the [ENTER] key.  Players can also click on cells while their ecosystem is live to impact the evolution.
 					<br />
 					<br />
-					Press [i] at any time to show / hide these instructions.
+					Press [i] at any time to show these instructions. Press [i] or click this window to hide instructions.
 				</div>
 			</td>
 		</tr>
